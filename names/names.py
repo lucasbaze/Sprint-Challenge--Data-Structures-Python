@@ -11,10 +11,24 @@ names_2 = f.read().split("\n")  # List containing 10000 names
 f.close()
 
 duplicates = []
-for name_1 in names_1:
-    for name_2 in names_2:
-        if name_1 == name_2:
-            duplicates.append(name_1)
+# for name_1 in names_1:
+#     for name_2 in names_2:
+#         if name_1 == name_2:
+#             duplicates.append(name_1)
+
+# Using a dictionary... which isn't allowed? 
+# Runtime for this is 0.0076 at max
+# Time Complexity is O(max(n, m)) Space complexity is also O(max(n, m))
+
+    # names_dict = {}
+    # for x in range(0, len(names_1)):
+    #     names_dict[names_1[x]] = x
+
+    # for name_2 in names_2:
+    #     if name_2 in names_dict:
+    #         duplicates.append(name_2)
+
+# Need to use a different data structure that doesn't have O(1) search? 
 
 end_time = time.time()
 print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
