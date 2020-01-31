@@ -25,8 +25,8 @@ class BinarySearchTree:
                 else:
                     insert_node(node.left, value)
                 
-            else:
-                print('Failed to Insert')
+            else: # The values are identical
+                print(f"Duplicate: {value}")
         
         insert_node(current_node, value)
 
