@@ -39,13 +39,19 @@ class RingBuffer:
 
 # ----------------Stretch Goal-------------------
 
+# The disadvantage of arrays is typically the need to resize the array when it grows to large
+# With a constrained array, we never have to worry about increasing the size of the array
+# and look up access is much faster with known indexes
 
 class ArrayRingBuffer:
     def __init__(self, capacity):
-        pass
+        self.capacity = capacity
+        self.storage = [None] * self.capacity
+        self.current = 0
 
     def append(self, item):
-        pass
+        self.storage[self.current] = item
+        self.current = (self.current + 1) % self.capacity
 
     def get(self):
-        pass
+        return [x for x in self.storage if x is not None]                
