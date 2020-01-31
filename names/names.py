@@ -1,4 +1,5 @@
 import time
+from binary_search_tree import BinarySearchTree
 
 start_time = time.time()
 
@@ -36,6 +37,13 @@ duplicates = []
 # Need to use a different data structure that doesn't have O(1) search? 
 
 # ATTEMPT 2
+bst = BinarySearchTree()
+
+# Slice the first element off since it's already included in the BinarySearchTree
+for name_1 in names_1:
+    bst.insert(name_1)
+
+
 
 
 end_time = time.time()
